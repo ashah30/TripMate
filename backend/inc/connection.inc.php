@@ -2,8 +2,8 @@
 
 $connect_error = 'Could not connect';
 $mysql_host = 'localhost';
-$mysql_username = 'user';
-$mysql_password = 'pass';
+$mysql_username = 'root';
+$mysql_password = '';
 $mysql_database = 'tripmate';
 
 
