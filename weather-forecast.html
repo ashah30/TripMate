@@ -62,64 +62,112 @@
 				</div>
 			</div>
 		</div>
-	</nav>
+    </nav>
+
 	<!--  Main container -->
 	<div class="container ">
-        <div class="row">
-            <!-- Map Column -->
-            <div class="col-lg-8 my-4">
-                <h3 class="pb-2 my-4 border-bottom">Send us a Message</h3>
-                <div class="control-group form-group">
-                    <div class="controls">
-                    <label>Full Name:</label>
-                    <input type="text" class="form-control" id="name">
-                    <p class="help-block"></p>
-                    </div>
-                </div>
-                <div class="control-group form-group">
-                    <div class="controls">
-                    <label>Phone Number:</label>
-                    <input type="tel" class="form-control" id="phone">
-                    <div class="help-block"></div></div>
-                </div>
-                <div class="control-group form-group">
-                    <div class="controls">
-                    <label>Email Address:</label>
-                    <input type="email" class="form-control" id="email">
-                    <div class="help-block"></div></div>
-                </div>
-                <div class="control-group form-group">
-                    <div class="controls">
-                    <label>Message:</label>
-                    <textarea rows="10" cols="100" class="form-control" id="message"></textarea>
-                    <div class="help-block"></div></div>
-                </div>
-                <button type="submit" class="btn btn-primary" id="sendMessageButton">Send Message</button>
-            </div>
-            <!-- Contact Details -->
-            <div class="col-lg-4 my-4">
-                <h3 class="pb-2 my-4 border-bottom">Contact Details</h3>
-                <p>
-                    Chicago, IL <br>
-                    USA <br>
-                </p>
-                <p>
-                    <abbr title="Phone">P</abbr>: (123) 456-7890
-                </p>
-                <p>
-                    <abbr title="Email">E</abbr>:
-                    <a href="mailto:info@example.com">info@example.com</a>
-                </p>
-                <p>
-                    <abbr title="Hours">H</abbr>: Monday - Friday: 8:00 AM to 5:00 PM
-                </p>
+        <h3 class="pb-2 my-4 border-bottom">Weather Forecast</h3>
 
-                <h3 class="pb-2 my-4 border-bottom">Find us here</h3>
-                <!-- Embedded Google Map -->
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d380510.67419105984!2d-88.01215594077644!3d41.83390416685132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2c3cd0f4cbed%3A0xafe0a6ad09c0c000!2sChicago%2C+IL!5e0!3m2!1sen!2sus!4v1543428625096" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <!-- Search -->
+        <div class="row">
+            <div class="col-md-5">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="search-location" placeholder="Enter city name...">
+                    <div class="results" id="distance-from-result"></div>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group">
+                    <button class="btn btn-primary" id="get_weather">Get Weather Forecast</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="py-2 text-center">
+            <div class="alert alert-primary" role="alert" id="weather-today">
+                <div class="location"></div>
+				<div class="date"></div>
+                <div class="mintemprature"></div>
+                <div class="maxtemprature"></div>
+				<div class="wind"></div>
+				<div class="pressure"></div>
+				<div class="humidity"></div>
+				<div class="cloud"></div>
+            </div>
+        </div>
+
+        <div class="py-2 ">
+            <div id="weather-data" style="display: none;">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">Min. Temprature</th>
+                            <th scope="col">Max. Temprature</th>
+                            <th scope="col">Cloud</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="date"></th>
+                            <td class="mintemprature"></td>
+                            <td class="maxtemprature"></td>
+                            <td class="cloud"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="date"></th>
+                            <td class="mintemprature"></td>
+                            <td class="maxtemprature"></td>
+                            <td class="cloud"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="date"></th>
+                            <td class="mintemprature"></td>
+                            <td class="maxtemprature"></td>
+                            <td class="cloud"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="date"></th>
+                            <td class="mintemprature"></td>
+                            <td class="maxtemprature"></td>
+                            <td class="cloud"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="date"></th>
+                            <td class="mintemprature"></td>
+                            <td class="maxtemprature"></td>
+                            <td class="cloud"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="date"></th>
+                            <td class="mintemprature"></td>
+                            <td class="maxtemprature"></td>
+                            <td class="cloud"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="date"></th>
+                            <td class="mintemprature"></td>
+                            <td class="maxtemprature"></td>
+                            <td class="cloud"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="date"></th>
+                            <td class="mintemprature"></td>
+                            <td class="maxtemprature"></td>
+                            <td class="cloud"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="date"></th>
+                            <td class="mintemprature"></td>
+                            <td class="maxtemprature"></td>
+                            <td class="cloud"></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
+
 	<!-- Footer -->
 	<footer class="py-2 mt-5 bg-dark">
 		<div class="container">
@@ -196,12 +244,16 @@
 				</div>
 			</div>
 		</div>
-	</div>
+    </div>
+
 	<!-- Bootstrap core JavaScript -->
 	<script src="vendor/jquery/jquery.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC46HJ8se4FRra20t24l9U3zprO7DInIb0&libraries=places"></script>
+	<script src="js/weather.js"></script>
     <script src="js/main.js"></script>
-    
+
+
 </body>
 
 </html>
