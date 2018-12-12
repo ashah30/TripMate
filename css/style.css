@@ -23,3 +23,16 @@ height: 100px;
 width: 100%;
 height: 400px;
 }
+.msg{
+  display: none;
+  margin-bottom: 0;
+}
+
+#login, #register, #logout{
+  display: none;
+}
+
+.delete-item{
+  cursor: pointer;
+  font-weight: 700;
+}

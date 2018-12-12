@@ -6,9 +6,10 @@ $mysql_username = 'root';
 $mysql_password = '';
 $mysql_database = 'tripmate';
 
+// Create connection
+$connection = new mysqli($mysql_host, $mysql_username, $mysql_password, $mysql_database);
 
-function get_mysql_connection() {
-	if(@!$connection = mysqli_connect($mysql_host , $mysql_username , $mysql_password ,$mysql_database))
-		die($connect_error);
-	return $connection;
+// Check connection
+if ($connection->connect_error) {
+   die("Connection failed: " . $connection->connect_error);
 }

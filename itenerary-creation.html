@@ -5,8 +5,8 @@
 	<!-- Meta data -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="Search weather of a city">
-	<meta name="author" content="Anjali Shah">
+	<meta name="description" content="">
+	<meta name="author" content="">
 	<!-- Title -->
 	<title>Trip Mate - Plan your trip with Tripmate</title>
 	<!-- Bootstrap core CSS -->
@@ -63,112 +63,57 @@
 				</div>
 			</div>
 		</div>
-    </nav>
-
+	</nav>
 	<!--  Main container -->
 	<div class="container ">
-        <h3 class="pb-2 my-4 border-bottom">Weather Forecast</h3>
-
-        <!-- Search -->
-        <div class="row">
-            <div class="col-md-5">
-                <div class="form-group">
-                    <input type="text" class="form-control" id="search-location" placeholder="Enter city name...">
-                    <div class="results" id="distance-from-result"></div>
+        <h3 class="pb-2 my-4 border-bottom">Itenerary Creation</h3>
+        <div class="row justify-content-center" id="login-card">
+            <div class="card shadow h-100">
+                <h4 class="card-header">Login</h4>
+                <div class="card-body">
+                    <p>Please Login or Register to create your Itenerary</p>
                 </div>
-            </div>
-            <div class="col-md-2">
-                <div class="form-group">
-                    <button class="btn btn-primary" id="get_weather">Get Weather Forecast</button>
+                <div class="card-footer">
+                    <button class="btn btn-primary mr-2" data-toggle="modal" data-target="#loginModal">Log in</button>
+					<button class="btn btn-primary" data-toggle="modal" data-target="#signupModal">Sign up</button>
                 </div>
             </div>
         </div>
+        <div class="row" id="itenerary-card">
+			<div class="col-md-6 mb-4">
+				<div class="card shadow">
+					<h4 class="card-header">Add Item</h4>
+					<div class="card-body">
+                        <div class="form-group">
+                            <label for="input-item">Enter your item</label>
+                            <input type="text" id="input-item" class="form-control">
+                        </div>
+						<div class="msg alert alert-success" role="alert"> </div>
+						<div class="msg alert alert-danger" role="alert"> </div>
+					</div>
+					<div class="card-footer d-flex">
+						<button class="btn btn-primary" onclick="addItem();">Add to Itenerary List</button>
+						<div class="loader" id="loaderAddItem"></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 mb-4">
+				<div class="card shadow h-100">
+					<h4 class="card-header">Itenerary List</h4>
+					<div class="card-body">
+		                <ul id="items" class="list-group">
 
-        <div class="py-2 text-center">
-            <div class="alert alert-primary" role="alert" id="weather-today">
-                <div class="location"></div>
-				<div class="date"></div>
-                <div class="mintemprature"></div>
-                <div class="maxtemprature"></div>
-				<div class="wind"></div>
-				<div class="pressure"></div>
-				<div class="humidity"></div>
-				<div class="cloud"></div>
-            </div>
-        </div>
+						</ul>
+					</div>
+					<div class="card-footer d-flex">
+						<button class="btn btn-primary" onclick="clearList();">Clear List</button>
+						<div class="loader" id="loaderClearList"></div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-        <div class="py-2 ">
-            <div id="weather-data" style="display: none;">
-                <table class="table table-striped">
-                    <thead>
-                        <tr>
-                            <th scope="col">Date</th>
-                            <th scope="col">Min. Temprature</th>
-                            <th scope="col">Max. Temprature</th>
-                            <th scope="col">Cloud</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row" class="date"></th>
-                            <td class="mintemprature"></td>
-                            <td class="maxtemprature"></td>
-                            <td class="cloud"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="date"></th>
-                            <td class="mintemprature"></td>
-                            <td class="maxtemprature"></td>
-                            <td class="cloud"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="date"></th>
-                            <td class="mintemprature"></td>
-                            <td class="maxtemprature"></td>
-                            <td class="cloud"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="date"></th>
-                            <td class="mintemprature"></td>
-                            <td class="maxtemprature"></td>
-                            <td class="cloud"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="date"></th>
-                            <td class="mintemprature"></td>
-                            <td class="maxtemprature"></td>
-                            <td class="cloud"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="date"></th>
-                            <td class="mintemprature"></td>
-                            <td class="maxtemprature"></td>
-                            <td class="cloud"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="date"></th>
-                            <td class="mintemprature"></td>
-                            <td class="maxtemprature"></td>
-                            <td class="cloud"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="date"></th>
-                            <td class="mintemprature"></td>
-                            <td class="maxtemprature"></td>
-                            <td class="cloud"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row" class="date"></th>
-                            <td class="mintemprature"></td>
-                            <td class="maxtemprature"></td>
-                            <td class="cloud"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
     </div>
-
 	<!-- Footer -->
 	<footer class="py-2 mt-5 bg-dark">
 		<div class="container">
@@ -242,13 +187,11 @@
 				</div>
 			</div>
 		</div>
-    </div>
-
+	</div>
 	<!-- Bootstrap core JavaScript -->
 	<script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC46HJ8se4FRra20t24l9U3zprO7DInIb0&libraries=places"></script>
-	<script src="js/weather.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/itenerary.js"></script>
     <script src="js/main.js"></script>
 
 </body>
